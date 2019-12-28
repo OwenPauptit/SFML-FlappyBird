@@ -1,10 +1,7 @@
-//#pragma once
-
 #include <sstream>
 #include "SplashState.hpp"
 #include "DEFINITIONS.hpp"
-
-#include <iostream>
+#include "MainMenuState.hpp"
 
 namespace Aesel {
 	SplashState::SplashState(GameDataRef data) :_data(data){
@@ -33,7 +30,8 @@ namespace Aesel {
 	// If more time has passed than the time allocated in DEFINITIONS.hpp, then the main menu will be loaded
 	void SplashState::Update(float dt) {
 		if (_clock.getElapsedTime().asSeconds() > SPLASH_STATE_SHOW_TIME) {
-			std::cout << "Go to main menu" << std::endl;
+			// Add Main Menu State to stack, the 'true' parameter tells the function that the main menu state will replace the splash state
+			_data->machine.AddState(StateRef(new MainMenuState(_data)), true);
 		}
 		else {
 			return;
