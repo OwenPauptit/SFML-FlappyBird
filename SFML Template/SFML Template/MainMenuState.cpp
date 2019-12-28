@@ -1,8 +1,7 @@
 #include "MainMenuState.hpp"
 #include <sstream>
 #include "DEFINITIONS.hpp"
-
-#include <iostream>
+#include "GameState.hpp"
 
 namespace Aesel {
 	MainMenuState::MainMenuState(GameDataRef data) :_data(data) {
@@ -32,7 +31,8 @@ namespace Aesel {
 				this->_data->window.close();
 			}
 			if (_data->input.isSpriteClicked(_playButton, sf::Mouse::Left, _data->window)) {
-				std::cout << "Go to game screen" << std::endl;
+				// Replace Main Menu State with Game State in stack
+				_data->machine.AddState(StateRef(new GameState(_data)), true);
 			}
 		}
 	}
