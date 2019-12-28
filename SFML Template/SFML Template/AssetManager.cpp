@@ -1,6 +1,7 @@
 #include "AssetManager.hpp"
 
 namespace Aesel {
+	// Attempts to load the texture, if succesful, assigns the texture to its name in the map
 	void AssetManager::LoadTexture(std::string name, std::string fileName) {
 		sf::Texture tex;
 
@@ -9,10 +10,13 @@ namespace Aesel {
 		}
 	}
 
+	// return the texture with the name in the parameter name
 	sf::Texture& AssetManager::GetTexture(std::string name) {
 		return this->_textures.at(name);
 	}
 	
+
+	//Exactly same process as for textures, except for fonts
 	void AssetManager::LoadFont(std::string name, std::string fileName) {
 		sf::Font font;
 
