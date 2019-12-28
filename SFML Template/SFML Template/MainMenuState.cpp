@@ -27,6 +27,7 @@ namespace Aesel {
 	void MainMenuState::HandleInput() {
 		sf::Event event;
 		while (this->_data->window.pollEvent(event)) {
+			// Check if close button on window has been pressed
 			if (event.type == sf::Event::Closed) {
 				this->_data->window.close();
 			}
@@ -41,7 +42,7 @@ namespace Aesel {
 
 	}
 
-	//Drawing the background to the screen
+	//Drawing the sprites to the screen
 	void MainMenuState::Draw(float dt) {
 		this->_data->window.clear(sf::Color::Red);
 

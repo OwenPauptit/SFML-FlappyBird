@@ -1,6 +1,5 @@
-﻿  GameState.cpp
-  main.cpp
+﻿  GameOverState.cpp
+  GameState.cpp
   MainMenuState.cpp
-  SplashState.cpp
   Generating Code...
   SFML Template.vcxproj -> C:\Users\owenp\source\repos\Flappy Bird\SFML Template\Debug\SFML Template.exe
