@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "State.hpp"
 #include "Game.hpp"
+#include "Pipe.hpp"
 
 namespace Aesel {
 	class GameState : public State {
@@ -21,5 +22,7 @@ namespace Aesel {
 		sf::Clock _clock;
 
 		sf::Sprite _background;
+
+		Pipe* pipe;
 	};
 }

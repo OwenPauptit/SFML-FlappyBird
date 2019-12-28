@@ -13,3 +13,6 @@
 #define GAME_TITLE_FILEPATH "Resources/title.png"
 #define GAME_OVER_TITLE_FILEPATH "Resources/GameOverTitle.png"
 #define PLAY_BUTTON_FILEPATH "Resources/PlayButton.png"
+
+#define PIPE_UP_FILEPATH "Resources/PipeUp.png"
+#define PIPE_DOWN_FILEPATH "Resources/PipeDown.png"
