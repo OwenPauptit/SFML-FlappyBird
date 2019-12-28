@@ -9,7 +9,7 @@ namespace Aesel {
 
 		virtual void HandleInput() = 0;
 		virtual void Update(float dt) = 0;
-		virtual void draw(float dt) = 0; //dt is delta time, the time between frames, so whether animations need to be drawn or not can be calculated
+		virtual void Draw(float dt) = 0; //dt is delta time, the time between frames, so whether animations need to be drawn or not can be calculated
 
 		virtual void Pause( ) { }
 		virtual void Resume( ) { }

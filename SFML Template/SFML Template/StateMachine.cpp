@@ -32,6 +32,7 @@ namespace Aesel {
 
 		// if a state is being added to the stack
 		if (this->_isAdding) {
+
 			// if there are states in the stack
 			if (!this->_states.empty()) {
 				//if a state is being replaced, remove the top state
@@ -46,11 +47,15 @@ namespace Aesel {
 
 			//add the new state to the stack, and tell compiler that the value in _newState can be deleted
 			this->_states.push(std::move(this->_newState));
+
 			//initialise the new state
 			this->_states.top()->Init();
+
 			// To avoid unwanted recursion
 			this->_isAdding = false;
+
 		}
+
 	}
 
 	// Returns the state at the top of the stack

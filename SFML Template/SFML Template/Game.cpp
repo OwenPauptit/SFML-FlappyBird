@@ -1,4 +1,5 @@
 #include "Game.hpp"
+#include "SplashState.hpp"
 
 namespace Aesel {
 
@@ -6,6 +7,8 @@ namespace Aesel {
 	Game::Game(int width, int height, std::string title) {
 		_data->window.create(sf::VideoMode(width, height), title, sf::Style::Close | sf::Style::Titlebar);
 	
+		_data->machine.AddState(StateRef(new SplashState(this->_data)));
+
 		this->Run();
 	}
 
@@ -22,9 +25,9 @@ namespace Aesel {
 
 		// While the SFML window is open
 		while (this->_data->window.isOpen()) {
-
 			// Process any state changes
 			this->_data->machine.ProcessStateChanges();
+
 
 		//Time calculations
 
@@ -48,11 +51,14 @@ namespace Aesel {
 				this->_data->machine.GetActiveState()->Update( dt );
 
 				accumulator -= dt;
+
 			}
+
+
 
 			// Draw the state - interpolation gives the amount of frames passed since the last update
 			interpolation = accumulator / dt;
-			this->_data->machine.GetActiveState()->draw( interpolation );
+			this->_data->machine.GetActiveState()->Draw( interpolation );
 
 		}
 	}

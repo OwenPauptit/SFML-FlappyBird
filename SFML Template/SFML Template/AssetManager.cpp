@@ -1,10 +1,10 @@
 #include "AssetManager.hpp"
+#include <SFML/Graphics.hpp>
 
 namespace Aesel {
 	// Attempts to load the texture, if succesful, assigns the texture to its name in the map
 	void AssetManager::LoadTexture(std::string name, std::string fileName) {
 		sf::Texture tex;
-
 		if (tex.loadFromFile(fileName)) {
 			this->_textures[name] = tex;
 		}
