@@ -29,20 +29,19 @@ namespace Aesel {
 				this->_data->window.close();
 			}
 
-			// For Testing:
+			// If the user clicks inside the window
 			if (_data->input.isSpriteClicked(_background, sf::Mouse::Left, _data->window)) {
 
-
-				// Replace Game State with GameOver State in stack
-				//_data->machine.AddState(StateRef(new GameOverState(_data)), true);
 			}
 		}
 	}
 
 	
 	void GameState::Update(float dt) {
+		// Move all the pipes
 		pipe->MovePipes( dt );
 
+		// If the right amount of time has passed, spawn a pipe
 		if (_clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FREQUENCY) {
 			pipe->SpawnBottomPipe();
 			pipe->SpawnTopPipe();

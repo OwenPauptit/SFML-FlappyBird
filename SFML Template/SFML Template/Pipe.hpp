@@ -12,7 +12,7 @@ namespace Aesel {
 
 		void SpawnBottomPipe();
 		void SpawnTopPipe();
-		//void SpawnInvisiblePipe();
+		//void SpawnInvisiblePipe();    <- ignore
 		void MovePipes(float dt);
 		void DrawPipes();
 
