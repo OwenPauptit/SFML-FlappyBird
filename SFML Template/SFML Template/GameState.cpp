@@ -31,15 +31,19 @@ namespace Aesel {
 
 			// For Testing:
 			if (_data->input.isSpriteClicked(_background, sf::Mouse::Left, _data->window)) {
+
+				pipe->SpawnBottomPipe();
+				pipe->SpawnTopPipe();
+
 				// Replace Game State with GameOver State in stack
-				_data->machine.AddState(StateRef(new GameOverState(_data)), true);
+				//_data->machine.AddState(StateRef(new GameOverState(_data)), true);
 			}
 		}
 	}
 
 	
 	void GameState::Update(float dt) {
-		
+		pipe->MovePipes( dt );
 	}
 
 
