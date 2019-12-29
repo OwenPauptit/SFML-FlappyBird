@@ -6,6 +6,7 @@
 #define SPLASH_STATE_SHOW_TIME 3.0
 
 #define PIPE_MOVEMENT_SPEED 200.0f
+#define PIPE_SPAWN_FREQUENCY 3.0f
 
 #define SPLASH_SCREEN_BACKGROUND_FILEPATH "Resources/AeselStudiosSplashScreen.png"
 #define MAIN_MENU_BACKGROUND_FILEPATH "Resources/sky.png"

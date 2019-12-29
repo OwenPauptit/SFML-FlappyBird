@@ -1,4 +1,5 @@
 #include "Pipe.hpp"
+#include <iostream>
 
 namespace Aesel {
 	Pipe::Pipe(GameDataRef data) : _data(data) {
@@ -26,10 +27,13 @@ namespace Aesel {
 
 	void Pipe::MovePipes(float dt) {
 		for (unsigned short int i = 0; i < pipeSprites.size(); i++) {
-			sf::Vector2f position = pipeSprites[i].getPosition();
 			float movement = PIPE_MOVEMENT_SPEED * dt;
 			pipeSprites[i].move(-movement, 0);
+			if (pipeSprites[i].getPosition().x < 0 - pipeSprites[i].getGlobalBounds().width) {
+				pipeSprites.erase(pipeSprites.begin() + i);
+			}
 		}
+		std::cout << pipeSprites.size() << std::endl;
 	}
 
 	void Pipe::DrawPipes() {
