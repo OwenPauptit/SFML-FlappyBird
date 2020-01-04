@@ -19,13 +19,13 @@ namespace Aesel {
 		pipeSprites.push_back(sprite);
 	}
 
-	// Ignore
-	/*void Pipe::SpawnInvisiblePipe() {
+	// Fixes jittery bug
+	void Pipe::SpawnInvisiblePipe() {
 		sf::Sprite sprite(_data->assets.GetTexture("Pipe Up"));
 		sprite.setPosition(_data->window.getSize().x,0);
 		sprite.setColor(sf::Color(0, 0, 0, 0));
 		pipeSprites.push_back(sprite);
-	}*/
+	}
 
 	// Moves the pipes
 	void Pipe::MovePipes(float dt) {

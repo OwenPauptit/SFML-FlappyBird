@@ -4,6 +4,7 @@
 #include "State.hpp"
 #include "Game.hpp"
 #include "Pipe.hpp"
+#include "Land.hpp"
 
 namespace Aesel {
 	class GameState : public State {
@@ -24,5 +25,6 @@ namespace Aesel {
 		sf::Sprite _background;
 
 		Pipe* pipe;
+		Land* land;
 	};
 }
