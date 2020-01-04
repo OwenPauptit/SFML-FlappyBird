@@ -2,6 +2,7 @@
 
 namespace Aesel {
 	Pipe::Pipe(GameDataRef data) : _data(data) {
+		// Used for finding valid values for the Y offset
 		_landHeight = _data->assets.GetTexture("Land").getSize().y;
 		_pipeSpawnYOffset = 0;
 	}
@@ -9,6 +10,7 @@ namespace Aesel {
 	// Creates a new sprite for a bottom pipe, and pushes to vector
 	void Pipe::SpawnBottomPipe() {
 		sf::Sprite sprite(_data->assets.GetTexture("Pipe Up"));
+		// Sets position to just outside the window, at the random y value
 		sprite.setPosition(_data->window.getSize().x, _data->window.getSize().y - sprite.getGlobalBounds().height - _pipeSpawnYOffset);
 		pipeSprites.push_back(sprite);
 	}
@@ -16,6 +18,7 @@ namespace Aesel {
 	// Creates a new sprite for a top pipe, and pushes to vector
 	void Pipe::SpawnTopPipe() {
 		sf::Sprite sprite(_data->assets.GetTexture("Pipe Down"));
+		// Sets position to just outside the window, at the random y value
 		sprite.setPosition(_data->window.getSize().x,-_pipeSpawnYOffset);
 		pipeSprites.push_back(sprite);
 	}
@@ -49,6 +52,7 @@ namespace Aesel {
 		}
 	}
 
+	// Sets the Y offset variable to a random number between 1 and the height of the land
 	void Pipe::RandomisePipeOffset() {
 		_pipeSpawnYOffset = rand() % (1 + _landHeight);
 	}
