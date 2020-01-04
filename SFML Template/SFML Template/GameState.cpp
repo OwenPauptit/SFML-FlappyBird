@@ -46,6 +46,7 @@ namespace Aesel {
 
 		// If the right amount of time has passed, spawn a pipe
 		if (_clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FREQUENCY) {
+			pipe->RandomisePipeOffset();
 			pipe->SpawnInvisiblePipe(); // fixes a bug
 			pipe->SpawnBottomPipe();
 			pipe->SpawnTopPipe();

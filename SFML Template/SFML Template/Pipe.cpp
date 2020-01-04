@@ -2,20 +2,21 @@
 
 namespace Aesel {
 	Pipe::Pipe(GameDataRef data) : _data(data) {
-
+		_landHeight = _data->assets.GetTexture("Land").getSize().y;
+		_pipeSpawnYOffset = 0;
 	}
 
 	// Creates a new sprite for a bottom pipe, and pushes to vector
 	void Pipe::SpawnBottomPipe() {
 		sf::Sprite sprite(_data->assets.GetTexture("Pipe Up"));
-		sprite.setPosition(_data->window.getSize().x, _data->window.getSize().y - sprite.getGlobalBounds().height);
+		sprite.setPosition(_data->window.getSize().x, _data->window.getSize().y - sprite.getGlobalBounds().height - _pipeSpawnYOffset);
 		pipeSprites.push_back(sprite);
 	}
 
 	// Creates a new sprite for a top pipe, and pushes to vector
 	void Pipe::SpawnTopPipe() {
 		sf::Sprite sprite(_data->assets.GetTexture("Pipe Down"));
-		sprite.setPosition(_data->window.getSize().x,0);
+		sprite.setPosition(_data->window.getSize().x,-_pipeSpawnYOffset);
 		pipeSprites.push_back(sprite);
 	}
 
@@ -46,5 +47,9 @@ namespace Aesel {
 		for (unsigned short int i = 0; i < pipeSprites.size(); i++) {
 			_data->window.draw(pipeSprites[i]);
 		}
+	}
+
+	void Pipe::RandomisePipeOffset() {
+		_pipeSpawnYOffset = rand() % (1 + _landHeight);
 	}
 }
