@@ -17,6 +17,8 @@
 #define GRAVITY 400.0f
 #define FLYING_SPEED 500.0f
 #define FLYING_DURATION 0.25f
+#define ROTATION_SPEED 200.f
+#define MAXIMUM_ROTATION 25.0f
 
 #define SPLASH_SCREEN_BACKGROUND_FILEPATH "Resources/AeselStudiosSplashScreen.png"
 #define MAIN_MENU_BACKGROUND_FILEPATH "Resources/sky.png"

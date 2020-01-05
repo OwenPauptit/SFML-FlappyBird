@@ -28,5 +28,6 @@ namespace Aesel {
 		sf::Clock _movementClock;
 
 		int _birdState;
+		float _rotation;
 	};
 }

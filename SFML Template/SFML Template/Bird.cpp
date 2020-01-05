@@ -12,7 +12,12 @@ namespace Aesel {
 		_birdSprite.setPosition((_data->window.getSize().x / 4) - (_birdSprite.getGlobalBounds().width / 2), (_data->window.getSize().y / 2) - (_birdSprite.getGlobalBounds().height / 2));
 
 		_birdState = BIRD_STATE_STILL;
-	}
+
+		// Prepares sprite for rotation
+		sf::Vector2f origin = sf::Vector2f(_birdSprite.getGlobalBounds().width / 2, _birdSprite.getGlobalBounds().height / 2);
+		_birdSprite.setOrigin(origin);
+		_rotation = 0;
+	};
 
 	void Bird::DrawBird() {
 		_data->window.draw(_birdSprite);
@@ -34,14 +39,28 @@ namespace Aesel {
 
 	}
 
-	// moves the bird depending on whether it is flying or falling
+	// Moves and rotates bird depending on whether it is flying or falling
 	void Bird::Update(float dt) {
 
 		if (_birdState == BIRD_STATE_FALLING) {
 			_birdSprite.move(0, GRAVITY * dt);
+
+			_rotation += ROTATION_SPEED * dt;
+			if (_rotation > MAXIMUM_ROTATION) {
+				_rotation = MAXIMUM_ROTATION;
+			}
+
+			_birdSprite.setRotation(_rotation);
 		}
 		else if (_birdState == BIRD_STATE_FLYING) {
 			_birdSprite.move(0, -FLYING_SPEED * dt);
+
+			_rotation -= ROTATION_SPEED * dt;
+			if (_rotation < -MAXIMUM_ROTATION) {
+				_rotation = -MAXIMUM_ROTATION;
+			}
+
+			_birdSprite.setRotation(_rotation);
 		}
 
 		// Switch from flying to falling
