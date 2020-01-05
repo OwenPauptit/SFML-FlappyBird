@@ -10,6 +10,14 @@
 
 #define BIRD_ANIMATION_DURATION 0.4f
 
+#define BIRD_STATE_STILL 1
+#define BIRD_STATE_FALLING 2
+#define BIRD_STATE_FLYING 3
+
+#define GRAVITY 400.0f
+#define FLYING_SPEED 500.0f
+#define FLYING_DURATION 0.25f
+
 #define SPLASH_SCREEN_BACKGROUND_FILEPATH "Resources/AeselStudiosSplashScreen.png"
 #define MAIN_MENU_BACKGROUND_FILEPATH "Resources/sky.png"
 #define GAME_BACKGROUND_FILEPATH "Resources/sky.png"
@@ -26,3 +34,4 @@
 #define BIRD_FRAME_2_FILEPATH "Resources/bird-02.png"
 #define BIRD_FRAME_3_FILEPATH "Resources/bird-03.png"
 #define BIRD_FRAME_4_FILEPATH "Resources/bird-04.png"
+
