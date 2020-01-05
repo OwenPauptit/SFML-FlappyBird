@@ -2,7 +2,6 @@
   GameOverState.cpp
   GameState.cpp
   Land.cpp
-  main.cpp
   MainMenuState.cpp
   Pipe.cpp
 C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Land.cpp(30,50): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
@@ -26,6 +25,7 @@ C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Pipe.cpp(22,
 C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Pipe.cpp(22,45): warning C4244:             T=unsigned int
 C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Pipe.cpp(22,45): warning C4244:         ]
   SplashState.cpp
+  main.cpp
   Generating Code...
 C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Pipe.cpp(29,45): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
 C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Pipe.cpp(29,45): warning C4244:         with

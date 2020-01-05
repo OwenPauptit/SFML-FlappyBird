@@ -14,7 +14,6 @@ namespace Aesel {
 		_data->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
 		_data->assets.LoadTexture("Pipe Down", PIPE_DOWN_FILEPATH);
 		_data->assets.LoadTexture("Land", LAND_FILEPATH);
-
 		_data->assets.LoadTexture("Bird 1", BIRD_FRAME_1_FILEPATH);
 		_data->assets.LoadTexture("Bird 2", BIRD_FRAME_2_FILEPATH);
 		_data->assets.LoadTexture("Bird 3", BIRD_FRAME_3_FILEPATH);
@@ -58,6 +57,8 @@ namespace Aesel {
 			pipe->SpawnTopPipe();
 			_clock.restart();
 		}
+
+		bird->Animate(dt);
 	}
 
 
