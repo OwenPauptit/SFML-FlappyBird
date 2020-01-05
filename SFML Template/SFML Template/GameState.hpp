@@ -5,6 +5,7 @@
 #include "Game.hpp"
 #include "Pipe.hpp"
 #include "Land.hpp"
+#include "Bird.hpp"
 
 namespace Aesel {
 	class GameState : public State {
@@ -26,5 +27,6 @@ namespace Aesel {
 
 		Pipe* pipe;
 		Land* land;
+		Bird* bird;
 	};
 }

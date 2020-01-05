@@ -9,14 +9,20 @@ namespace Aesel {
 	}
 
 	void GameState::Init() {
-		// Load textures and set them to sprites
-		this->_data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
-		this->_data->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
-		this->_data->assets.LoadTexture("Pipe Down", PIPE_DOWN_FILEPATH);
-		this->_data->assets.LoadTexture("Land", LAND_FILEPATH);
+		// Load textures
+		_data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
+		_data->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
+		_data->assets.LoadTexture("Pipe Down", PIPE_DOWN_FILEPATH);
+		_data->assets.LoadTexture("Land", LAND_FILEPATH);
+
+		_data->assets.LoadTexture("Bird 1", BIRD_FRAME_1_FILEPATH);
+		_data->assets.LoadTexture("Bird 2", BIRD_FRAME_2_FILEPATH);
+		_data->assets.LoadTexture("Bird 3", BIRD_FRAME_3_FILEPATH);
+		_data->assets.LoadTexture("Bird 4", BIRD_FRAME_4_FILEPATH);
 
 		pipe = new Pipe(_data);
 		land = new Land(_data);
+		bird = new Bird(_data);
 
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 
@@ -63,6 +69,7 @@ namespace Aesel {
 
 		pipe->DrawPipes();
 		land->DrawLand();
+		bird->DrawBird();
 
 		this->_data->window.display();
 

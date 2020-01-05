@@ -5,8 +5,8 @@
 
 #define SPLASH_STATE_SHOW_TIME 3.0
 
-#define PIPE_MOVEMENT_SPEED 200.0f
-#define PIPE_SPAWN_FREQUENCY 3.0f
+#define PIPE_MOVEMENT_SPEED 300.0f
+#define PIPE_SPAWN_FREQUENCY 0.3f
 
 #define SPLASH_SCREEN_BACKGROUND_FILEPATH "Resources/AeselStudiosSplashScreen.png"
 #define MAIN_MENU_BACKGROUND_FILEPATH "Resources/sky.png"
@@ -19,3 +19,8 @@
 #define PIPE_UP_FILEPATH "Resources/PipeUp.png"
 #define PIPE_DOWN_FILEPATH "Resources/PipeDown.png"
 #define LAND_FILEPATH "Resources/land.png"
+
+#define BIRD_FRAME_1_FILEPATH "Resources/bird-01.png"
+#define BIRD_FRAME_2_FILEPATH "Resources/bird-02.png"
+#define BIRD_FRAME_3_FILEPATH "Resources/bird-03.png"
+#define BIRD_FRAME_4_FILEPATH "Resources/bird-04.png"
