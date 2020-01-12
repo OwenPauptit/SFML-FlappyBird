@@ -37,3 +37,10 @@
 #define BIRD_FRAME_3_FILEPATH "Resources/bird-03.png"
 #define BIRD_FRAME_4_FILEPATH "Resources/bird-04.png"
 
+
+// The three states while playing
+enum GameStates {
+	eReady, // before the player starts tapping, only bird animation and land movement
+	ePlaying, // while the player is tapping, pipes spawn and bird can fly
+	eGameOver // after the player has collided with pipe or land
+};

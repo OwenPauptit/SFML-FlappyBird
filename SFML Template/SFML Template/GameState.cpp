@@ -25,7 +25,7 @@ namespace Aesel {
 
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 
-
+		_gameState = GameStates::eReady;
 	}
 
 	void GameState::HandleInput() {
@@ -38,28 +38,46 @@ namespace Aesel {
 
 			// If the user clicks inside the window
 			if (_data->input.isSpriteClicked(_background, sf::Mouse::Left, _data->window)) {
-				bird->Tap();
+				if (_gameState != GameStates::eGameOver) {
+					_gameState = GameStates::ePlaying;
+					bird->Tap();
+				}
 			}
 		}
 	}
 
 	
 	void GameState::Update(float dt) {
-		// Move all the pipes
-		pipe->MovePipes( dt );
-		land->MoveLand(dt);
-
-		// If the right amount of time has passed, spawn a pipe
-		if (_clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FREQUENCY) {
-			pipe->RandomisePipeOffset();
-			pipe->SpawnInvisiblePipe(); // fixes a bug
-			pipe->SpawnBottomPipe();
-			pipe->SpawnTopPipe();
-			_clock.restart();
+		// Animations that happen before and during playing
+		if (_gameState != GameStates::eGameOver) {
+			land->MoveLand(dt);
+			bird->Animate(dt);
 		}
 
-		bird->Animate(dt);
-		bird->Update(dt);
+		// Processes that happen only when player is playing
+		if (_gameState == GameStates::ePlaying) {
+			pipe->MovePipes(dt);
+			// If the right amount of time has passed, spawn a pipe
+			if (_clock.getElapsedTime().asSeconds() > PIPE_SPAWN_FREQUENCY) {
+				pipe->RandomisePipeOffset();
+				pipe->SpawnInvisiblePipe(); // fixes a bug
+				pipe->SpawnBottomPipe();
+				pipe->SpawnTopPipe();
+				_clock.restart();
+			}
+
+			bird->Update(dt);
+
+			// Checks if bird collides with land
+			std::vector<sf::Sprite> landSprites = land->GetSprites();
+			for (int i = 0; i < landSprites.size(); i++) {
+				if (collision.CheckSpriteCollision(bird->GetSprite(), landSprites[i])) {
+					_gameState = GameStates::eGameOver;
+					_data->machine.AddState(StateRef(new GameOverState(_data)), true);
+				}
+			}
+		}
+
 	}
 
 
