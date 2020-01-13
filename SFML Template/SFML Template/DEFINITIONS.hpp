@@ -25,6 +25,8 @@
 #define PIPE_COLLISION_SCALE 1.0f
 #define LAND_COLLISION_SCALE 1.0f
 
+#define FLASH_SPEED 1500.0f
+
 #define SPLASH_SCREEN_BACKGROUND_FILEPATH "Resources/AeselStudiosSplashScreen.png"
 #define MAIN_MENU_BACKGROUND_FILEPATH "Resources/sky.png"
 #define GAME_BACKGROUND_FILEPATH "Resources/sky.png"

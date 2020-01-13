@@ -22,6 +22,7 @@ namespace Aesel {
 		pipe = new Pipe(_data);
 		land = new Land(_data);
 		bird = new Bird(_data);
+		flash = new Flash(_data);
 
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 
@@ -73,7 +74,7 @@ namespace Aesel {
 			for (int i = 0; i < landSprites.size(); i++) {
 				if (collision.CheckSpriteCollision(bird->GetSprite(), BIRD_LAND_COLLISION_SCALE, landSprites[i], LAND_COLLISION_SCALE)) {
 					_gameState = GameStates::eGameOver;
-					_data->machine.AddState(StateRef(new GameOverState(_data)), true);
+					//_data->machine.AddState(StateRef(new GameOverState(_data)), true);
 				}
 			}
 			std::vector<sf::Sprite> pipeSprites = pipe->GetSprites();
@@ -82,10 +83,14 @@ namespace Aesel {
 					if (collision.CheckSpriteCollision(bird->GetSprite(), BIRD_PIPE_COLLISION_SCALE, pipeSprites[i],PIPE_COLLISION_SCALE)) {
 						_gameState = GameStates::eGameOver;
 						
-						_data->machine.AddState(StateRef(new GameOverState(_data)), true);
+						//_data->machine.AddState(StateRef(new GameOverState(_data)), true);
 					}
 				}
 			}
+		}
+
+		if (_gameState == GameStates::eGameOver) {
+			flash->Show(dt);
 		}
 
 	}
@@ -100,6 +105,7 @@ namespace Aesel {
 		pipe->DrawPipes();
 		land->DrawLand();
 		bird->DrawBird();
+		flash->Draw();
 
 		this->_data->window.display();
 
