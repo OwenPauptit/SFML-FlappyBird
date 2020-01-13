@@ -56,4 +56,8 @@ namespace Aesel {
 	void Pipe::RandomisePipeOffset() {
 		_pipeSpawnYOffset = rand() % (1 + _landHeight);
 	}
+
+	const std::vector<sf::Sprite>& Pipe::GetSprites() const {
+		return pipeSprites;
+	}
 }

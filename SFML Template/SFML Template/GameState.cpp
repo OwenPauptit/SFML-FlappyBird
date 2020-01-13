@@ -68,12 +68,22 @@ namespace Aesel {
 
 			bird->Update(dt);
 
-			// Checks if bird collides with land
+			// Checks bird collisions
 			std::vector<sf::Sprite> landSprites = land->GetSprites();
 			for (int i = 0; i < landSprites.size(); i++) {
-				if (collision.CheckSpriteCollision(bird->GetSprite(), landSprites[i])) {
+				if (collision.CheckSpriteCollision(bird->GetSprite(), BIRD_LAND_COLLISION_SCALE, landSprites[i], LAND_COLLISION_SCALE)) {
 					_gameState = GameStates::eGameOver;
 					_data->machine.AddState(StateRef(new GameOverState(_data)), true);
+				}
+			}
+			std::vector<sf::Sprite> pipeSprites = pipe->GetSprites();
+			for (int i = 0; i < pipeSprites.size(); i++) {
+				if (pipeSprites[i].getColor() != sf::Color(0, 0, 0, 0)) {
+					if (collision.CheckSpriteCollision(bird->GetSprite(), BIRD_PIPE_COLLISION_SCALE, pipeSprites[i],PIPE_COLLISION_SCALE)) {
+						_gameState = GameStates::eGameOver;
+						
+						_data->machine.AddState(StateRef(new GameOverState(_data)), true);
+					}
 				}
 			}
 		}
