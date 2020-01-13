@@ -1,4 +1,5 @@
 #include <sstream>
+#include <iostream>
 #include "GameState.hpp"
 #include "GameOverState.hpp"
 #include "DEFINITIONS.hpp"
@@ -18,6 +19,7 @@ namespace Aesel {
 		_data->assets.LoadTexture("Bird 2", BIRD_FRAME_2_FILEPATH);
 		_data->assets.LoadTexture("Bird 3", BIRD_FRAME_3_FILEPATH);
 		_data->assets.LoadTexture("Bird 4", BIRD_FRAME_4_FILEPATH);
+		_data->assets.LoadTexture("Scoring Pipe", SCORING_PIPE_FILEPATH);
 
 		pipe = new Pipe(_data);
 		land = new Land(_data);
@@ -25,6 +27,8 @@ namespace Aesel {
 		flash = new Flash(_data);
 
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
+
+		_score = 0;
 
 		_gameState = GameStates::eReady;
 	}
@@ -64,6 +68,7 @@ namespace Aesel {
 				pipe->SpawnInvisiblePipe(); // fixes a bug
 				pipe->SpawnBottomPipe();
 				pipe->SpawnTopPipe();
+				pipe->SpawnScoringPipe();
 				_clock.restart();
 			}
 
@@ -82,8 +87,20 @@ namespace Aesel {
 				if (pipeSprites[i].getColor() != sf::Color(0, 0, 0, 0)) {
 					if (collision.CheckSpriteCollision(bird->GetSprite(), BIRD_PIPE_COLLISION_SCALE, pipeSprites[i],PIPE_COLLISION_SCALE)) {
 						_gameState = GameStates::eGameOver;
-						
-						//_data->machine.AddState(StateRef(new GameOverState(_data)), true);
+					}
+				}
+			}
+			// Updating score if bird passes through a scoring pipe
+			if (_gameState == GameStates::ePlaying) {
+				std::vector<sf::Sprite>& scoringSprites = pipe->GetScoringSprites();
+				for (int i = 0; i < scoringSprites.size(); i++) {
+					if (scoringSprites[i].getColor() != sf::Color(0, 0, 0, 0)) {
+						if (collision.CheckSpriteCollision(bird->GetSprite(), BIRD_PIPE_COLLISION_SCALE, scoringSprites[i], PIPE_COLLISION_SCALE)) {
+							_score++;
+							std::cout << _score << std::endl;
+
+							scoringSprites.erase(scoringSprites.begin() + i);
+						}
 					}
 				}
 			}

@@ -31,9 +31,15 @@ namespace Aesel {
 		pipeSprites.push_back(sprite);
 	}
 
+	void Pipe::SpawnScoringPipe() {
+		sf::Sprite sprite(_data->assets.GetTexture("Scoring Pipe"));
+		sprite.setPosition(_data->window.getSize().x, 0);
+		scoringPipes.push_back(sprite);
+	}
+
+
 	// Moves the pipes
 	void Pipe::MovePipes(float dt) {
-		//iterates over vector
 		for (unsigned short int i = 0; i < pipeSprites.size(); i++) {
 			// Moves the pipes relative to the amount of movements should have passed since the last frame
 			float movement = PIPE_MOVEMENT_SPEED * dt;
@@ -41,6 +47,14 @@ namespace Aesel {
 			// Removes the sprite if it is off the screen
 			if (pipeSprites[i].getPosition().x < 0 - pipeSprites[i].getGlobalBounds().width) {
 				pipeSprites.erase(pipeSprites.begin() + i);
+			}
+		}
+		// Used for scoring system
+		for (unsigned short int i = 0; i < scoringPipes.size(); i++) {
+			float movement = PIPE_MOVEMENT_SPEED * dt;
+			scoringPipes[i].move(-movement, 0);
+			if (scoringPipes[i].getPosition().x < 0 - scoringPipes[i].getGlobalBounds().width) {
+				scoringPipes.erase(scoringPipes.begin() + i);
 			}
 		}
 	}
@@ -59,5 +73,9 @@ namespace Aesel {
 
 	const std::vector<sf::Sprite>& Pipe::GetSprites() const {
 		return pipeSprites;
+	}
+	
+	std::vector<sf::Sprite>& Pipe::GetScoringSprites() {
+		return scoringPipes;
 	}
 }

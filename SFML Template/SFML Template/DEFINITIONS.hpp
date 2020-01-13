@@ -37,6 +37,7 @@
 #define PLAY_BUTTON_FILEPATH "Resources/PlayButton.png"
 #define PIPE_UP_FILEPATH "Resources/PipeUp.png"
 #define PIPE_DOWN_FILEPATH "Resources/PipeDown.png"
+#define SCORING_PIPE_FILEPATH "Resources/InvisibleScoringPipe.png"
 #define LAND_FILEPATH "Resources/land.png"
 
 #define BIRD_FRAME_1_FILEPATH "Resources/bird-01.png"

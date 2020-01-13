@@ -34,5 +34,7 @@ namespace Aesel {
 		Flash* flash;
 
 		int _gameState;
+
+		int _score;
 	};
 }
