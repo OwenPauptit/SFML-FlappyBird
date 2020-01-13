@@ -8,6 +8,7 @@
 #include "Bird.hpp"
 #include "Collision.hpp"
 #include "Flash.hpp"
+#include "HUD.hpp"
 
 namespace Aesel {
 	class GameState : public State {
@@ -32,6 +33,7 @@ namespace Aesel {
 		Bird* bird;
 		Collision collision;
 		Flash* flash;
+		HUD* hud;
 
 		int _gameState;
 

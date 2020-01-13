@@ -1,5 +1,4 @@
 #include <sstream>
-#include <iostream>
 #include "GameState.hpp"
 #include "GameOverState.hpp"
 #include "DEFINITIONS.hpp"
@@ -20,15 +19,18 @@ namespace Aesel {
 		_data->assets.LoadTexture("Bird 3", BIRD_FRAME_3_FILEPATH);
 		_data->assets.LoadTexture("Bird 4", BIRD_FRAME_4_FILEPATH);
 		_data->assets.LoadTexture("Scoring Pipe", SCORING_PIPE_FILEPATH);
+		_data->assets.LoadFont("Flappy Font", FLAPPY_FONT_FILEPATH);
 
 		pipe = new Pipe(_data);
 		land = new Land(_data);
 		bird = new Bird(_data);
 		flash = new Flash(_data);
+		hud = new HUD(_data);
 
 		_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 
 		_score = 0;
+		hud->UpdateScore(_score);
 
 		_gameState = GameStates::eReady;
 	}
@@ -97,8 +99,7 @@ namespace Aesel {
 					if (scoringSprites[i].getColor() != sf::Color(0, 0, 0, 0)) {
 						if (collision.CheckSpriteCollision(bird->GetSprite(), BIRD_PIPE_COLLISION_SCALE, scoringSprites[i], PIPE_COLLISION_SCALE)) {
 							_score++;
-							std::cout << _score << std::endl;
-
+							hud->UpdateScore(_score);
 							scoringSprites.erase(scoringSprites.begin() + i);
 						}
 					}
@@ -123,6 +124,7 @@ namespace Aesel {
 		land->DrawLand();
 		bird->DrawBird();
 		flash->Draw();
+		hud->Draw();
 
 		this->_data->window.display();
 

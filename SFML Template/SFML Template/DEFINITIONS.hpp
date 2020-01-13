@@ -27,23 +27,26 @@
 
 #define FLASH_SPEED 1500.0f
 
-#define SPLASH_SCREEN_BACKGROUND_FILEPATH "Resources/AeselStudiosSplashScreen.png"
-#define MAIN_MENU_BACKGROUND_FILEPATH "Resources/sky.png"
-#define GAME_BACKGROUND_FILEPATH "Resources/sky.png"
-#define GAME_OVER_BACKGROUND_FILEPATH "Resources/sky.png"
+#define SPLASH_SCREEN_BACKGROUND_FILEPATH "Resources/Images/AeselStudiosSplashScreen.png"
+#define MAIN_MENU_BACKGROUND_FILEPATH "Resources/Images/sky.png"
+#define GAME_BACKGROUND_FILEPATH "Resources/Images/sky.png"
+#define GAME_OVER_BACKGROUND_FILEPATH "Resources/Images/sky.png"
 
-#define GAME_TITLE_FILEPATH "Resources/title.png"
-#define GAME_OVER_TITLE_FILEPATH "Resources/GameOverTitle.png"
-#define PLAY_BUTTON_FILEPATH "Resources/PlayButton.png"
-#define PIPE_UP_FILEPATH "Resources/PipeUp.png"
-#define PIPE_DOWN_FILEPATH "Resources/PipeDown.png"
-#define SCORING_PIPE_FILEPATH "Resources/InvisibleScoringPipe.png"
-#define LAND_FILEPATH "Resources/land.png"
+#define GAME_TITLE_FILEPATH "Resources/Images/title.png"
+#define GAME_OVER_TITLE_FILEPATH "Resources/Images/GameOverTitle.png"
+#define PLAY_BUTTON_FILEPATH "Resources/Images/PlayButton.png"
+#define PIPE_UP_FILEPATH "Resources/Images/PipeUp.png"
+#define PIPE_DOWN_FILEPATH "Resources/Images/PipeDown.png"
+#define SCORING_PIPE_FILEPATH "Resources/Images/InvisibleScoringPipe.png"
+#define LAND_FILEPATH "Resources/Images/land.png"
 
-#define BIRD_FRAME_1_FILEPATH "Resources/bird-01.png"
-#define BIRD_FRAME_2_FILEPATH "Resources/bird-02.png"
-#define BIRD_FRAME_3_FILEPATH "Resources/bird-03.png"
-#define BIRD_FRAME_4_FILEPATH "Resources/bird-04.png"
+#define BIRD_FRAME_1_FILEPATH "Resources/Images/bird-01.png"
+#define BIRD_FRAME_2_FILEPATH "Resources/Images/bird-02.png"
+#define BIRD_FRAME_3_FILEPATH "Resources/Images/bird-03.png"
+#define BIRD_FRAME_4_FILEPATH "Resources/Images/bird-04.png"
+
+#define FLAPPY_FONT_FILEPATH "Resources/Fonts/FlappyFont.ttf"
+#define FLAPPY_FONT_SIZE 128
 
 
 // The three states while playing
