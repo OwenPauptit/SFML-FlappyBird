@@ -24,6 +24,7 @@ namespace Aesel {
 		sf::Sprite _title;
 		sf::Sprite _body;
 		sf::Sprite _retryButton;
+		sf::Sprite _medal;
 
 		sf::Text _scoreText;
 		sf::Text _highScoreText;

@@ -1,8 +1,67 @@
-﻿  GameOverState.cpp
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(49,116): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(50,128): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(58,91): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(58,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(65,95): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(65,61): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+﻿  Bird.cpp
+  Flash.cpp
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Flash.cpp(15,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Flash.cpp(19,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Flash.cpp(25,14): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Flash.cpp(28,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  GameOverState.cpp
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(55,116): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(56,128): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(64,91): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(64,57): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(71,95): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(71,61): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(86,82): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(86,48): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  GameState.cpp
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameState.cpp(81,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameState.cpp(88,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameState.cpp(99,23): warning C4018: '<': signed/unsigned mismatch
+  HUD.cpp
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\HUD.cpp(12,83): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\HUD.cpp(12,52): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  Land.cpp
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Land.cpp(30,50): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+  MainMenuState.cpp
+  Pipe.cpp
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Pipe.cpp(14,45): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Pipe.cpp(22,48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Pipe.cpp(22,45): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Pipe.cpp(29,45): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\Pipe.cpp(36,45): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+  SplashState.cpp
+  main.cpp
+  Generating Code...
   SFML Template.vcxproj -> C:\Users\owenp\source\repos\Flappy Bird\SFML Template\Debug\SFML Template.exe

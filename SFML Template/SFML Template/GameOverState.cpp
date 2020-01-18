@@ -41,6 +41,10 @@ namespace Aesel {
 		_data->assets.LoadTexture("Game Over Background", GAME_OVER_BACKGROUND_FILEPATH);
 		_data->assets.LoadTexture("Game Over Title", GAME_OVER_TITLE_FILEPATH);
 		_data->assets.LoadTexture("Game Over Body", GAME_OVER_BODY_FILEPATH);
+		_data->assets.LoadTexture("Bronze Medal", BRONZE_MEDAL_FILEPATH);
+		_data->assets.LoadTexture("Silver Medal", SILVER_MEDAL_FILEPATH);
+		_data->assets.LoadTexture("Gold Medal", GOLD_MEDAL_FILEPATH);
+		_data->assets.LoadTexture("Platinum Medal", PLATINUM_MEDAL_FILEPATH);
 
 		_background.setTexture(_data->assets.GetTexture("Game Over Background"));
 		_title.setTexture(_data->assets.GetTexture("Game Over Title"));
@@ -65,6 +69,21 @@ namespace Aesel {
 		_highScoreText.setFillColor(sf::Color::White);
 		_highScoreText.setOrigin(_highScoreText.getGlobalBounds().width / 2, _highScoreText.getGlobalBounds().height / 2);
 		_highScoreText.setPosition(_data->window.getSize().x / 10 * 7.25, _data->window.getSize().y / 1.78);
+
+		if (_score >= PLATINUM_MEDAL_SCORE) {
+			_medal.setTexture(_data->assets.GetTexture("Platinum Medal"));
+		}
+		else if (_score >= GOLD_MEDAL_SCORE) {
+			_medal.setTexture(_data->assets.GetTexture("Gold Medal"));
+		}
+		else if (_score >= SILVER_MEDAL_SCORE) {
+			_medal.setTexture(_data->assets.GetTexture("Silver Medal"));
+		}
+		else if (_score >= BRONZE_MEDAL_SCORE) {
+			_medal.setTexture(_data->assets.GetTexture("Bronze Medal"));
+		}
+
+		_medal.setPosition(_data->window.getSize().x * 0.23, _data->window.getSize().y * 0.45);
 	}
 
 	// Check if close button on window has been pressed
@@ -98,6 +117,7 @@ namespace Aesel {
 		_data->window.draw(_retryButton);
 		_data->window.draw(_scoreText);
 		_data->window.draw(_highScoreText);
+		_data->window.draw(_medal);
 
 		_data->window.display();
 

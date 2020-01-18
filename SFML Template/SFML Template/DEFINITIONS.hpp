@@ -28,6 +28,16 @@
 #define FLASH_SPEED 1500.0f
 #define TIME_BEFORE_GAME_OVER_APPEARS 1.5f
 
+#define BRONZE_MEDAL_SCORE 0
+#define SILVER_MEDAL_SCORE 5
+#define GOLD_MEDAL_SCORE 25
+#define PLATINUM_MEDAL_SCORE 100
+
+#define BRONZE_MEDAL_FILEPATH "Resources/Images/Bronze-Medal.png"
+#define SILVER_MEDAL_FILEPATH "Resources/Images/Silver-Medal.png"
+#define GOLD_MEDAL_FILEPATH "Resources/Images/Gold-Medal.png"
+#define PLATINUM_MEDAL_FILEPATH "Resources/Images/Platinum-Medal.png"
+
 #define SPLASH_SCREEN_BACKGROUND_FILEPATH "Resources/Images/AeselStudiosSplashScreen.png"
 #define MAIN_MENU_BACKGROUND_FILEPATH "Resources/Images/sky.png"
 #define GAME_BACKGROUND_FILEPATH "Resources/Images/sky.png"
