@@ -4,7 +4,7 @@
 #include "DEFINITIONS.hpp"
 
 namespace Aesel {
-	GameOverState::GameOverState(GameDataRef data) :_data(data) {
+	GameOverState::GameOverState(GameDataRef data, int score) :_data(data), _score(score) {
 
 	}
 
@@ -22,6 +22,21 @@ namespace Aesel {
 		_body.setPosition((_data->window.getSize().x / 2) - (_body.getGlobalBounds().width / 2), (_data->window.getSize().y / 2) - (_body.getGlobalBounds().height / 2));
 		_title.setPosition((_data->window.getSize().x / 2) - (_title.getGlobalBounds().width / 2), _body.getPosition().y - (_title.getGlobalBounds().height * 1.2));
 		_retryButton.setPosition((_data->window.getSize().x / 2) - (_retryButton.getGlobalBounds().width / 2), _body.getPosition().y + (_body.getGlobalBounds().height * 1.1));
+		
+		// Set up texts
+		_scoreText.setFont(_data->assets.GetFont("Flappy Font"));
+		_scoreText.setString(std::to_string(_score));
+		_scoreText.setCharacterSize(GAME_OVER_SCORE_SIZE);
+		_scoreText.setFillColor(sf::Color::White);
+		_scoreText.setOrigin(_scoreText.getGlobalBounds().width / 2, _scoreText.getGlobalBounds().height / 2);
+		_scoreText.setPosition(_data->window.getSize().x / 10 * 7.25, _data->window.getSize().y / 2.15);
+
+		_highScoreText.setFont(_data->assets.GetFont("Flappy Font"));
+		_highScoreText.setString(std::to_string(_highScore));
+		_highScoreText.setCharacterSize(GAME_OVER_SCORE_SIZE);
+		_highScoreText.setFillColor(sf::Color::White);
+		_highScoreText.setOrigin(_highScoreText.getGlobalBounds().width / 2, _highScoreText.getGlobalBounds().height / 2);
+		_highScoreText.setPosition(_data->window.getSize().x / 10 * 7.25, _data->window.getSize().y / 1.78);
 	}
 
 	// Check if close button on window has been pressed
@@ -53,6 +68,8 @@ namespace Aesel {
 		_data->window.draw(_title);
 		_data->window.draw(_body);
 		_data->window.draw(_retryButton);
+		_data->window.draw(_scoreText);
+		_data->window.draw(_highScoreText);
 
 		_data->window.display();
 

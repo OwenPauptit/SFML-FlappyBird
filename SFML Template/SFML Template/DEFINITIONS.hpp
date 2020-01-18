@@ -49,6 +49,7 @@
 
 #define FLAPPY_FONT_FILEPATH "Resources/Fonts/FlappyFont.ttf"
 #define FLAPPY_FONT_SIZE 128
+#define GAME_OVER_SCORE_SIZE 56
 
 
 // The three states while playing
