@@ -1,12 +1,4 @@
-﻿  HUD.cpp
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\HUD.cpp(11,83): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\HUD.cpp(11,83): warning C4244:         with
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\HUD.cpp(11,83): warning C4244:         [
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\HUD.cpp(11,83): warning C4244:             T=unsigned int
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\HUD.cpp(11,83): warning C4244:         ]
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\HUD.cpp(11,52): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\HUD.cpp(11,52): warning C4244:         with
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\HUD.cpp(11,52): warning C4244:         [
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\HUD.cpp(11,52): warning C4244:             T=unsigned int
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\HUD.cpp(11,52): warning C4244:         ]
+﻿  GameOverState.cpp
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(23,116): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(24,128): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   SFML Template.vcxproj -> C:\Users\owenp\source\repos\Flappy Bird\SFML Template\Debug\SFML Template.exe

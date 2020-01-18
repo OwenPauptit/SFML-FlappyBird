@@ -26,6 +26,7 @@
 #define LAND_COLLISION_SCALE 1.0f
 
 #define FLASH_SPEED 1500.0f
+#define TIME_BEFORE_GAME_OVER_APPEARS 1.5f
 
 #define SPLASH_SCREEN_BACKGROUND_FILEPATH "Resources/Images/AeselStudiosSplashScreen.png"
 #define MAIN_MENU_BACKGROUND_FILEPATH "Resources/Images/sky.png"
@@ -34,6 +35,7 @@
 
 #define GAME_TITLE_FILEPATH "Resources/Images/title.png"
 #define GAME_OVER_TITLE_FILEPATH "Resources/Images/GameOverTitle.png"
+#define GAME_OVER_BODY_FILEPATH "Resources/Images/GameOverBody.png"
 #define PLAY_BUTTON_FILEPATH "Resources/Images/PlayButton.png"
 #define PIPE_UP_FILEPATH "Resources/Images/PipeUp.png"
 #define PIPE_DOWN_FILEPATH "Resources/Images/PipeDown.png"

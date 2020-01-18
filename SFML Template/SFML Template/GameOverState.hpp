@@ -22,5 +22,7 @@ namespace Aesel {
 
 		sf::Sprite _background;
 		sf::Sprite _title;
+		sf::Sprite _body;
+		sf::Sprite _retryButton;
 	};
 }
