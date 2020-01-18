@@ -2,6 +2,7 @@
 #include "GameOverState.hpp"
 #include "GameState.hpp"
 #include "DEFINITIONS.hpp"
+#include <fstream>
 
 namespace Aesel {
 	GameOverState::GameOverState(GameDataRef data, int score) :_data(data), _score(score) {
@@ -9,6 +10,33 @@ namespace Aesel {
 	}
 
 	void GameOverState::Init() {
+
+		// Reading Highscore from text file
+		std::ifstream readFile;
+		readFile.open(HIGHSCORE_FILEPATH);
+
+		if (readFile.is_open()){
+			while (!readFile.eof()) {
+				readFile >> _highScore;
+			}
+		}
+
+		readFile.close();
+
+		// Overwriting highscore if score is greater
+		std::ofstream writeFile;
+		writeFile.open(HIGHSCORE_FILEPATH);
+
+		if (writeFile.is_open()) {
+			if (_score > _highScore) {
+				_highScore = _score;
+			}
+
+			writeFile << _highScore;
+		}
+
+		writeFile.close();
+
 		// Load textures and set them to sprites
 		_data->assets.LoadTexture("Game Over Background", GAME_OVER_BACKGROUND_FILEPATH);
 		_data->assets.LoadTexture("Game Over Title", GAME_OVER_TITLE_FILEPATH);

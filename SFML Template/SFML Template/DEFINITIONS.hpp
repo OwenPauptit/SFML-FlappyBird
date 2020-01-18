@@ -47,6 +47,8 @@
 #define BIRD_FRAME_3_FILEPATH "Resources/Images/bird-03.png"
 #define BIRD_FRAME_4_FILEPATH "Resources/Images/bird-04.png"
 
+#define HIGHSCORE_FILEPATH "Resources/Data/HighScore.txt"
+
 #define FLAPPY_FONT_FILEPATH "Resources/Fonts/FlappyFont.ttf"
 #define FLAPPY_FONT_SIZE 128
 #define GAME_OVER_SCORE_SIZE 56
