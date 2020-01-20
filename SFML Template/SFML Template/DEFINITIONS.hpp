@@ -57,8 +57,8 @@
 #define BIRD_FRAME_3_FILEPATH "Resources/Images/bird-03.png"
 #define BIRD_FRAME_4_FILEPATH "Resources/Images/bird-04.png"
 
-#define HIT_SOUND_FILEPATH "Resources/Audio/Hit.wav"
-#define POINT_SOUND_FILEPATH "Resources/Audio/Point.wav"
+#define HIT_SOUND_FILEPATH "Resources/Audio/Jamie Hit.wav"
+#define POINT_SOUND_FILEPATH "Resources/Audio/Jamie Point.wav"
 #define WING_SOUND_FILEPATH "Resources/Audio/Wing.wav"
 
 #define HIGHSCORE_FILEPATH "Resources/Data/HighScore.txt"
