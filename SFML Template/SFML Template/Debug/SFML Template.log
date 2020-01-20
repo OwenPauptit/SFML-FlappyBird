@@ -14,9 +14,9 @@ C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverStat
 C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(86,82): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameOverState.cpp(86,48): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   GameState.cpp
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameState.cpp(81,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameState.cpp(88,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameState.cpp(99,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameState.cpp(98,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameState.cpp(106,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\GameState.cpp(118,23): warning C4018: '<': signed/unsigned mismatch
   HUD.cpp
 C:\Users\owenp\source\repos\Flappy Bird\SFML Template\SFML Template\HUD.cpp(12,83): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with

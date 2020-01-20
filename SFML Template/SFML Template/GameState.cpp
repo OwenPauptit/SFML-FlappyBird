@@ -1,4 +1,5 @@
 #include <sstream>
+#include <iostream>
 #include "GameState.hpp"
 #include "GameOverState.hpp"
 #include "DEFINITIONS.hpp"
@@ -9,6 +10,22 @@ namespace Aesel {
 	}
 
 	void GameState::Init() {
+
+		// Load sound buffers and set them to sounds - could be in asset manager
+		if (!_hitSoundBuffer.loadFromFile(HIT_SOUND_FILEPATH)) {
+			std::cout << "Error loading hit sound" << std::endl;
+		}
+		if (!_wingSoundBuffer.loadFromFile(WING_SOUND_FILEPATH)) {
+			std::cout << "Error loading wing sound" << std::endl;
+		}
+		if (!_pointSoundBuffer.loadFromFile(POINT_SOUND_FILEPATH)) {
+			std::cout << "Error loading point sound" << std::endl;
+		}
+
+		_hitSound.setBuffer(_hitSoundBuffer);
+		_pointSound.setBuffer(_pointSoundBuffer);
+		_wingSound.setBuffer(_wingSoundBuffer);
+
 		// Load textures
 		_data->assets.LoadTexture("Game Background", GAME_BACKGROUND_FILEPATH);
 		_data->assets.LoadTexture("Pipe Up", PIPE_UP_FILEPATH);
@@ -48,6 +65,7 @@ namespace Aesel {
 				if (_gameState != GameStates::eGameOver) {
 					_gameState = GameStates::ePlaying;
 					bird->Tap();
+					_wingSound.play();
 				}
 			}
 		}
@@ -82,6 +100,7 @@ namespace Aesel {
 				if (collision.CheckSpriteCollision(bird->GetSprite(), BIRD_LAND_COLLISION_SCALE, landSprites[i], LAND_COLLISION_SCALE)) {
 					_gameState = GameStates::eGameOver;
 					_clock.restart();
+					_hitSound.play();
 				}
 			}
 			std::vector<sf::Sprite> pipeSprites = pipe->GetSprites();
@@ -90,6 +109,7 @@ namespace Aesel {
 					if (collision.CheckSpriteCollision(bird->GetSprite(), BIRD_PIPE_COLLISION_SCALE, pipeSprites[i],PIPE_COLLISION_SCALE)) {
 						_gameState = GameStates::eGameOver;
 						_clock.restart();
+						_hitSound.play();
 					}
 				}
 			}
@@ -102,6 +122,7 @@ namespace Aesel {
 							_score++;
 							hud->UpdateScore(_score);
 							scoringSprites.erase(scoringSprites.begin() + i);
+							_pointSound.play();
 						}
 					}
 				}
